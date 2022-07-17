@@ -1,12 +1,14 @@
 <div class="navbar-ctn">
-  <a href="#">TLN</a>
-  <ul>
-    <%= if user_signed_in ? %>
+  <p><a href="#">TLN</a></p>
+  <ul class="nav-list">
+    <% if user_signed_in? %>
+      <li><%= link_to "Accueil", "#" %></li>
       <li><a href="#">Livres</a></li>
       <li><a href="#">Contact</a></li>
+      <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
     <% else %>
       <li>
-        <%= link_to "login", new_user_session_path,  %>
+        <%= link_to "login", new_user_session_path  %>
       </li>
     <% end %>
   </ul>

@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-  get 'books/create'
-  get 'books/new'
-  get 'books/edit'
-  get 'books/destroy'
-  get 'books/update'
-  get 'books/show'
-  get 'books/index'
+  resources :books
   devise_for :users
+  root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
